@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEM Naming Convention</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- main component -->
+    <header class="header">
+      <!-- 2 elements h1 and nav dependent on the header so we use '__' as naming convention for those classes -->
+      <h1 class="header__title">BEM</h1>
+      <nav class="header__nav">
+        <!-- It doesnt describe the structure it only needs the main component (not header__nav__btn)-->
+        <button class="header__btn">🚀</button>
+        <button class="header__btn header__btn--secondary">🔥</button>
+        <button class="header__btn header__btn--lean header__btn--border-lg">
+          🌮
+        </button>
+      </nav>
+    </header>
+  </body>
+</html>

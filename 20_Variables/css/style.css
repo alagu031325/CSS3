@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* CSS variables are really useful - change the hexadecimal code in one place and it will get reflected in all places where this variable is used */
+
+/* || VARIABLES */
+/* variables go inside the root pseudo class - referencing the document root and everything inherit from that - even the html tag inherit from the root pseudo class */
+:root {
+  /* FONT */
+  --FF: "Nunito", sans-serif;
+  --FS: 1.5rem;
+  /* extra large font size */
+  --FS-XL: 3rem;
+
+  /* COLOR - upper or lower case*/
+  --BGCOLOR: #475569;
+  --ALT-BGCOLOR: #1e293b;
+  /* we can use two variables that has the same value */
+  --RADIAL-COLOR: #f5f5f5;
+  --LIGHT-COLOR: #f5f5f5;
+  --DARK-COLOR: #000;
+
+  /* SQUARE */
+  --SQUARE-BGCOLOR: papayawhip;
+  /* picks larger of any of these 2 values */
+  --SQUARE-SIZE: max(150px, 20vw);
+
+  /* GENERAL */
+  --PADDING: 0.5rem;
+  /* to make all shadows fall in the same direction we use variables - defined using another variable */
+  --SHADOWS: 0 6px 5px -5px var(--DARK-COLOR);
+
+  --BORDERS: 2px solid var(--DARK-COLOR);
+}
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --BGCOLOR: #000;
+    --ALT-BGCOLOR: #333;
+    --RADIAL-COLOR: #9f9f9f;
+    --SQUARE-BGCOLOR: rgb(196, 156, 196);
+  }
+}
+
+/* || GENERAL STYLES */
+body {
+  /* variables can also be used for fonts  */
+  font: var(--FS) var(--FF);
+  min-height: 100vh;
+  /* var function used with variable name */
+  background-color: var(--BGCOLOR);
+  background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+footer {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header,
+footer {
+  position: sticky;
+  background-color: var(--ALT-BGCOLOR);
+  color: var(--LIGHT-COLOR);
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: var(--LIGHT-COLOR);
+  color: var(--DARK-COLOR);
+  padding: var(--PADDING);
+  border-bottom: var(--BORDERS);
+  /* creates a shadow right underneath */
+  box-shadow: var(--SHADOWS);
+}
+
+main {
+  flex-grow: 1;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: min(4vw, 15px);
+}
+
+footer {
+  bottom: 0;
+}
+
+/* || FEATURES */
+.square {
+  background-color: var(--SQUARE-BGCOLOR);
+  width: var(--SQUARE-SIZE);
+  height: var(--SQUARE-SIZE);
+  border: var(--BORDERS);
+  border-radius: 15px;
+  display: grid;
+  place-content: center;
+  font-size: var(--FS-XL);
+  box-shadow: var(--SHADOWS);
+}
+
+.square--highlight {
+  /* just to change the value of the variable for one div */
+  --SQUARE-BGCOLOR: cornflowerblue;
+}

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  padding: 5% 10%;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+ol {
+  /* default is decimal value, leading-zero adds zero to the decimal value */
+  list-style-type: lower-alpha;
+}
+
+/* can also use disc or circle values to make it look like unordered list */
+ul {
+  /* default is disc */
+  list-style-type: square;
+  /* if outside - the bullet will not be center aligned - to align with text we specify inside*/
+  list-style-position: inside;
+  text-align: center;
+  /* color property changes color of both the bullet points and the text */
+  color: brown;
+  /* introduce space between list items */
+  line-height: 1.6;
+  /* To use image instead of bullet points */
+  /* list-style-image: url(../images/checkmark.png); */
+
+  /* shorthand notation - square becomes the fallback when the image doesnt load */
+  /* list-style: square url(../images/checkmark.png) inside; */
+}
+
+/* 'li' could apply to all li items both in ul and in ol and to apply to li items under ul we use*/
+/* nth-child pseudo class also accepts the word 'odd' 'even' */
+ul li:nth-child(2) {
+  /* this will only change 2nd list item in the unordered list */
+  color: blueviolet;
+}
+
+/* pesudo element */
+ul ::marker {
+  /* color for markers alone */
+  color: black;
+  font-family: fantasy;
+  font-size: 2.3rem;
+  /* we can also put fontawesome icons */
+  content: "Just today **";
+}

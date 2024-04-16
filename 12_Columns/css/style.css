@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* adapts based on screen size, not necessarily one p element per column */
+.columns {
+  column-count: 4;
+  /* each column should have 250px width or more and only supports those number of columns based on screen size all the way up to the column that we specify */
+  column-width: 250px;
+  /* shorthand count width*/
+  /* columns: 4 250px; */
+  /* column rule wont exist if there is only one column so 4 columns will have 3 column rule*/
+  column-rule: 3px solid #333;
+  column-gap: 3rem;
+}
+
+/* p elements inside columns container */
+.columns p {
+  margin-top: 0;
+}
+
+/* margin collapsing - margin between 2nd and 3rd paragraph element will not double up instead its collapses the redundant margin */
+
+.columns h2 {
+  margin-top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  /* to avoid splitting of header between multiple columns */
+  break-inside: avoid;
+  /* break before - actually forces the column break and shrinks content to make it into columns - force column break before the header */
+  break-before: column;
+}
+
+.columns .quote {
+  margin-top: 1.2rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #333;
+  /* element spans across all columns */
+  column-span: all;
+}
+
+.nowrap {
+  /* This doesnt break the content inside this element - doesnt wrap words */
+  white-space: nowrap;
+}

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+nav {
+  border: 2px solid #333;
+  border-radius: 2rem;
+  /* margin left and right will eat up the space on left/right by centering it*/
+  margin: 0 auto 1rem;
+  max-width: 36rem;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+/* occupies 100% width of the parent element */
+h2 {
+  padding: 1rem;
+  background-color: orange;
+  border-radius: 2rem 2rem 0 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  border-top: 1px solid #333;
+}
+
+/* Normally anchor tag is inline element we are setting it to block level element */
+li a {
+  display: block;
+}
+
+li a,
+li a:visited {
+  text-decoration: none;
+  color: orangered;
+}
+
+li a:hover,
+li a:focus {
+  background-color: yellow;
+  color: red;
+}
+
+li:last-child a {
+  /* top left / top right/ bottom right/bottom left */
+  border-radius: 0 0 2rem 2rem;
+}

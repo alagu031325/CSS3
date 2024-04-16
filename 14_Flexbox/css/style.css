@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  min-height: 600px;
+  /* centered horizontally and same amount of space in left and right */
+  margin-inline: auto;
+  border: 1px solid #000;
+  display: flex;
+  /* default is flex-start - alignment through the main axis*/
+  justify-content: space-evenly;
+  /* gap between each flex item */
+  gap: 1rem;
+  /* alignment through the cross axis*/
+  align-items: center;
+  /* flex items by default will be in a row - row-reverse - each row will be reversed */
+  flex-direction: row;
+  /* stacks them one below another in 1 column */
+  /* to allow flex items to wrap when resized */
+  /* flex-wrap: wrap; */
+  /* shorthand  - flex-direction/flex-wrap*/
+  flex-flow: row nowrap;
+  /* defines how rows of the flex items are aligned in flex container */
+  /* align-content: space-evenly; */
+}
+
+.box {
+  /* if no width set they take the width of the content */
+  /* min-width: 100px; */
+  height: 70px;
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem;
+  /* to center the numbers in the middle we can make each item as flex container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* like giving min width - gives the base size - if we have flex-shrink set we can shrink below this value*/
+  flex-basis: 250px;
+  /* all box can grow evenly to fill up the space */
+  /* flex-grow: 1; */
+  flex-shrink: 1;
+  /* shorthand - flex-grow flex-shrink flex-basis */
+  /* flex: 1 1 250px; */
+}
+
+.box:nth-child(2) {
+  /* 2nd flex item takes up more space than the first flex item but not double the space as first because they both have a flex-basis of 100px so the elements after their 100px, then what ever space is left the second element(with flex grow 2) gets twice as much as that extra space that element with flex grow 1*/
+  /* flex-grow: 2; */
+  /* second box will shrink more than the first box since it has value 2 */
+  flex-shrink: 2;
+  /* it will not move to the 4th element but will move to the end - order 0 is default and brings it back - to bring it at the beginning we say order:-1 - row-reverse property will also affect how this order property positions the flex-item*/
+  order: 4;
+}

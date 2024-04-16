@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  background-color: aqua;
+  /* width: 50%; */
+}
+
+/* block level elements have some default properties - has default 100% width of the parent element and they stack on each other*/
+p {
+  background-color: gray;
+}
+
+/* inline elements doesnt cause a new line break - like span */
+.opposite {
+  /* height and margin block can be applied to inline-block elements */
+  display: inline-block;
+  background-color: #333;
+  color: whitesmoke;
+  /* we cant apply top or bottom margin to an inline element and height cant be applied to inline elements */
+  /* padding if applied in inline elements might overlap other elements and hence we can use the display property inline-block */
+  padding: 3rem;
+}
+/* 100% width of parent container */
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 1rem;
+}
+
+li {
+  /* to make the list items appear side by side */
+  display: inline-block;
+  /* margin applies only to left and right */
+  margin-inline: 0.5rem;
+}
+
+li a {
+  color: red;
+  text-decoration: none;
+}
+
+li a:hover,
+li a:focus {
+  text-decoration: underline;
+}

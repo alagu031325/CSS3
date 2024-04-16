@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* we need to make the link stand out even if we remove the underline */
+a {
+  text-decoration: none;
+  /* cursor - can also have 'not-allowed' to disable the link */
+  cursor: pointer;
+  color: hsl(207, 44%, 49%);
+}
+
+/* pseudo class - represents the current state of the element - has more specificity than the a element styles */
+a:visited {
+  color: purple;
+}
+
+/* hover state doesnt have a default value - if instead of mouse if they are tabbing through the page, then the elements goes to focus state - like screen readers*/
+a:hover,
+a:focus {
+  /* slight lighter shade than anchor element color to complement it - we can also add a transparency value to the hsl */
+  color: hsl(180, 44%, 49%);
+  /* to include little transparency when hovering */
+  opacity: 0.7;
+  /* we can also highlight the background */
+  background-color: slateblue;
+}
+
+a:active {
+  color: red;
+}

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || GENERAL STYLES */
+body {
+  /* font shorthand property that sets both font size and the font family */
+  font: 1.5rem "Nunito", sans-serif;
+  min-height: 100vh;
+
+  background-color: #475569;
+  /* radial gradient starts at center and works its way out */
+  background-image: radial-gradient(whitesmoke, #475569);
+  /* flex container */
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+main,
+footer {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  grid-template-columns: 100%;
+}
+
+header,
+footer {
+  position: sticky;
+  background-color: #1e293b;
+  color: whitesmoke;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-bottom: 2px solid #000;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  bottom: 0;
+}
+
+/* Media Queries Syntax
+@media media type and (condition: breakpoint){
+  //CSS Rules
+ } 
+ We usually use condition/conditions(combined using logical operators) as min-width as it starts from smallest to largest and that is what is called as mobile first design and responsive design - so we start with one column screen and spread things out as we go 
+ 
+ We can also use max-width or orientation with breakpoint landscape(applies to anything that was wider than it was tall) or min-aspect-ratio - we can set a ratio based on size of the device like 7/4 then when the aspect ratio reached that size, width being 7 and height being 4 in that ratio the specified styles would apply
+
+ Lot of different conditions and breakpoint we can apply */
+
+/* SMALL SCREENS */
+
+/* common media type is screen we can also use all, print or even speech for screen readers */
+@media screen and (min-width: 576px) {
+  /* min-width - the below styles 'start from that width' and max-width specifies a width 'up to the specified width' these styles are applied  */
+  /* we can overwrite the previous styles we had and other styles that we dont overwrite will still apply as applied before the media query width */
+  body {
+    background-color: green;
+    background-image: radial-gradient(whitesmoke, green);
+  }
+  nav {
+    display: none;
+  }
+}
+
+/* MEDIUM SCREENS */
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  }
+}
+
+/* LARGE SCREENS */
+
+@media screen and (min-width: 992px) {
+  body {
+    background-color: firebrick;
+    background-image: radial-gradient(whitesmoke, firebrick);
+  }
+}
+
+/* X-LARGE SCREENS */
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: rebeccapurple;
+    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  }
+}
+
+/* MOBILE DEVICE LANDSCAPE */
+/* It is wider than it is taller */
+
+@media screen and (min-height: 425px) and (min-aspect-ratio: 7/4) {
+  body {
+    background-color: dodgerblue;
+    background-image: radial-gradient(whitesmoke, dodgerblue);
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
+}

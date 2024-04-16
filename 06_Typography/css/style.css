@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* Typography is the way in which text is arranged and presented */
+body {
+  /* 15 % of the containing element's width */
+  padding: 3%;
+  /* children of this body element will inherit the font-size - but it is not inherited inside input or a button element */
+  font-size: 2rem;
+  /* font-family - sans-serif/serif is mostly popular browser font family */
+  /* font-family: "Courier New", Courier, monospace; */
+  font-family: "Roboto", sans-serif;
+  /* same spacing for every character - monospace, cursive , fantasy - used as fallbacks in font stack (verdana,arial,times new roman - web safe fonts that computers have it installed for the browsers to use)*/
+}
+
+/* input,
+button {
+  font: inherit;
+} */
+
+/* text settings that are not impacted by the font choice */
+p {
+  /* none is default for paragraph text but a tag it is underlined by default */
+  text-decoration: underline;
+  /* capitalize first letter of every word in the paragraph */
+  text-transform: capitalize;
+  /* align left is default for paragraphs - justify makes right hand uniform*/
+  text-align: justify;
+  /* indents the first line */
+  text-indent: 3em;
+  /*  Horizontal offset: This parameter specifies the horizontal distance the shadow will be offset from the text.( - value moves it left, + value moves shadow to right)
+  Vertical offset: This parameter specifies the vertical distance the shadow will be offset from the text. ( - value moves it upwards, + value moves shadow to down)
+  Blur radius: This parameter specifies the amount of blur applied to the shadow.  */
+  text-shadow: 10px 10px 4px rgba(0, 0, 0, 0.5);
+  /* It accepts units and also just accepts a number */
+  line-height: 1.4;
+  /* length units, percentage, keywords */
+  letter-spacing: 2px;
+  word-spacing: 0.3em;
+
+  /* font properties */
+  font-weight: 500;
+  /* stronger italics */
+  /* font-style: oblique; */
+}

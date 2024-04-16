@@ -1,0 +1,47 @@
+/* we can reset the browser default styles applied to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Absolute length values - commonly used is pixel - but we take the choice away from user in changing their browser font-size - so absolute values are not recommended for font-size */
+
+/* parent element to h1 - which is taking 50% width of the page */
+header {
+  width: 80%;
+}
+
+body {
+  /* vmin  unit - 20 vmin - 20% of viewport height or width (which ever is smallest) */
+  /* vmax  unit - 20 vmax - 20% of viewport height or width (which ever is biggest) */
+  /* still allows the body to grow with the content - if it outgrows the viewport */
+  min-height: 100vh;
+}
+
+/* block level element by default the width is 100% of the parent element */
+h1 {
+  /* absolute value for pixel width - may it be small viewport or large viewport - this width will remain same  */
+  border: 3px dashed red;
+
+  /* percentages - represents a fraction of some other value. They are relative to another quantity(mostly parent element) - we dont do this for font-size - commonly used to set the sizing of different elements */
+  width: 50%;
+  /* 3*16 = 48px */
+  font-size: 3rem;
+  /* 1/2 of element font size - padding is 24px - we can use em for padding or margin settings */
+  padding: 0.5em;
+}
+
+/* main {
+  font-size: 2rem;
+} */
+
+/* Relative length unit used for font-size is rem - font size of the root element - 1rem is the default = 16px - 1 root element that is the default font-size of the root element set by browser if we dont set it */
+p {
+  /* font-size: 2em; */
+  font-size: 2rem;
+  /* ch - character width - based on character size -  */
+  /* 40 characters before the line wraps */
+  /* width: 40ch; */
+}
+
+/* em unit not recommended for the font-size - 2em will depend on the parent element font-size (2 * 2rem) - if no font size for parent then looks to the root element font-size */

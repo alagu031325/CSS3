@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* set by default -  */
+  /* box-sizing: content-box; */
+  /* border-box helps us to calculate the sizes that we are assigning - it doesnt include the margin */
+  box-sizing: border-box;
+}
+
+.container {
+  /* border size default is 3px, styles - double, ridge, outset */
+  border: dashed red;
+  /* we can specify individually - default color is black*/
+  border-top: 4px solid;
+  border-bottom: 4px dotted;
+  /* we can also specify any one value using border-top-color, border-top-style, border-top-width */
+  font-size: 1.5rem;
+  /* 1em would be same as the element font size - shorthand notation - top right/left bottom, it goes in order top,right,bottom,left*/
+  margin: 1.5em 2em 2em; 
+  /* em - only when we set a font size on the header and em will be calculated according to it */
+  padding: 1.5em;
+  /* outline is not part of box model - It doesnt take up space like border */
+  outline: 5px solid purple;
+  /* to push the outline further out from the border if a negative value given then outline is inside of the box model */
+  outline-offset: 5px;
+}
+
+.circle{
+  /* doesnt work for top and bottom, we can use keyword auto for left and right and it will center it horizontally */
+  margin: 3rem;
+  background-color: gold;
+  width:100px;
+  height:100px;
+  border: 2px solid black;
+  /* half the value of width and height */
+  border-radius: 50px;
+}

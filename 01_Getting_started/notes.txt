@@ -1,0 +1,15 @@
+Chapter 1: CSS: 
+---------------
+Cascading Style Sheets is a stylesheet language used to describe the presentation of document written in HTML or XML (including XML dialects such as SVG, XHTML). CSS describes how elements should be rendered on screen, paper or on other media.
+
+HTML gives structure to the document and CSS takes care of the appearance/presentation aspect
+
+Anatomy of CSS ruleset:
+-----------------------
+p -> selector
+property -> color
+property value -> orangered
+
+property and property value together is defined as a declaration and the whole structure is called a ruleset/rule
+
+The declaration will be ignored if the property name is not specified correct, it doesnt throw any error 

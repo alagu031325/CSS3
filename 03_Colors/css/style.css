@@ -1,0 +1,28 @@
+/* hsl -hue saturation and lightness 
+hsl(0,100%,50%) 
+50% lightness, 0% in third value is black, 100% will be white 
+100% for saturation gives the full color and 0% gives white
+hue - max value is 360 and changes with change in color
+*/
+
+body {
+  font-size: 21px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  /* color names */
+  background-color: papayawhip;
+  /* hsl color values - for setting font color */
+  color: hsl(0, 100%, 50%);
+}
+
+p {
+  /* rgb color values - goes from 0 to 255 */
+  /* alpha channel guides the transparency - 1 means no alpha channel and 0 will make it transparent */
+  color: rgba(255, 0, 0, 0.6);
+}
+
+h2 {
+  /* hexadecimal color values - uses 0 to 9 and A to F - 0 is the absence of color and denotes black - similar to rgb*/
+  color: #0000ff;
+  /* we can use shorthand notation if each pair match, like 00F where each 0 represents a pair of 0 */
+}

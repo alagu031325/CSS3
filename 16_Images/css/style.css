@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* Begin Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  /* to remove the extra space below image when it is an inline element - space introduced since it is usually used with some kind of text */
+  display: block;
+}
+/* End Reset */
+
+/* Utility Classess */
+
+.nowrap {
+  /* avoid splitting of words */
+  white-space: nowrap;
+}
+
+.offscreen {
+  /* to make it accessible by screen readers but still invisible */
+  position: absolute;
+  left: -1000px;
+}
+/* End Utility Classess */
+body {
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+  background-color: aliceblue;
+  /* linear gradient is used to switch from one color to another - we can use any number of colors that need to appear as a rainbow (default direction is top to bottom) but we can change (to left - start from right and goes to left/to bottom/to top/to right)*/
+  background-image: url("../img//bubbles.png"),
+    linear-gradient(to left, steelblue, #fff);
+  /* We can also apply second background image so both apply together - we can have any number of background images, gradient qualifies as background image aswell (bubbles comes first so they stack on top of gradient*/
+  /* repeat y for bubbles image and no repeat for gradient */
+  background-repeat: repeat-y, no-repeat;
+  /* to show bubble in the right - set the position to right*/
+  background-position: right top;
+  background-size: 20%, auto;
+}
+
+.container {
+  /* fallback if background img couldnt load */
+  background-color: peachpuff;
+  /* background image needs a url - the pattern repeats itself and fills up*/
+  background-image: url("../img/map-2176x1451.png");
+  /* to avoid repeat we can use below prop repeat-x and repeat-y repeats in x axis and y axis alone */
+  background-repeat: no-repeat;
+  /* To see the entire image - image also resizes based on the screen size */
+  background-size: cover;
+  /* to position the image - yaxis and xaxis - to decide what part of image to be displayed for the background*/
+  background-position: top right;
+}
+
+.hero {
+  border-bottom: 2px solid #000;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  /* this dims the color of the background image and makes the text stand out */
+  background-color: hsla(0, 0%, 70%, 0.35);
+}
+
+/* NOTE: some devices has different amount of pixels if we use too small images then it might look blur on devices with more pixels so one rule of thumb to be followed is to use an image as twice as big as what we plane on the plane that would help it to upsize to that extra pixels in big devices to look good instead of stretching images in big devices  */
+
+.h1 {
+  font-size: 300%;
+  color: aliceblue;
+  /* x axis / y axis/ blur value/ color */
+  text-shadow: 2px 2px 5px #000;
+  /* background-color: hsla(0, 0%, 0%, 0.34);
+  border-radius: 20px;
+  padding: 1rem; */
+}
+
+.profile-pic-figure {
+  width: 35%;
+}
+
+.profile-pic-figure img {
+  width: 100%;
+  height: auto;
+  min-width: 100px;
+  border: 5px double black;
+  border-radius: 50%;
+}
+
+.example {
+  margin-top: 1rem;
+  padding-left: 20px;
+  border: 1px solid red;
+}
+
+/* we can override the width and height values in the img - img elements are inline elements */
+.example img {
+  /* 25% of the container size - makes it responsive image*/
+  width: 25%;
+  height: auto;
+}
+
+.clip {
+  font-weight: 800;
+  font-size: 16rem;
+  text-align: center;
+  background-image: url("../img/scenic-2200x1331.png");
+  background-size: cover;
+  text-transform: uppercase;
+  /* background-clip - non-standard method of clipping the image to the foreground text - supported in chrome with a webkit prefix - it keeps the background only for text */
+  -webkit-background-clip: text;
+  /* to work in firefox we need to use background-clip as a fallback */
+  background-clip: text;
+  color: rgba(0, 0, 0, 0.176);
+  /* to make the text totally transparent - no color needed to be specified */
+  /* color: transparent; */
+}
+
+/* background shorthand property takes background repeat, background position and background image specified together */

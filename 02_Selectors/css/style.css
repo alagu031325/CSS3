@@ -1,0 +1,59 @@
+/* universal selector - selects all elements not inherited*/
+/* * {
+  font-family: monospace;
+} */
+
+/* Inheritance - another element inherit the property from its parent element - anything related to font, text or typography is inherited(helps in implementing DRY principle) - other properties are not inherited like border property*/
+
+body {
+  font-size: 21px;
+  /* border: 3px solid black; */
+}
+
+/* form elements dont inherit font-size and other typography settings - we need to specify them to do so */
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+/* Group selectors - ruleset applied both to h1 and h2*/
+h1,
+h2 {
+  color: blueviolet;
+}
+
+/* class selectors start with a period and can be reused - classes can be used more than once and are used to select multiple elements */
+.gray {
+  /* more specific so they over rule other declarations */
+  color: gray;
+}
+
+/* Element selectors select all of the elements of that type */
+p {
+  color: purple;
+}
+
+/* cascading - so works from top to bottom - latest rule overrides the previous one - specificity can override this order */
+p {
+  color: orchid;
+}
+
+/* Even more specific selector is 'id' selector - id are unique and should only exists once in a html document - rarely used */
+#second {
+  font-style: italic;
+}
+
+/* Select an element that is nested inside another element - we might have other span elements within p which may not need this rule */
+/* p span {
+  text-transform: uppercase;
+  background-color: gold;
+} */
+
+.highlight {
+  /* more reusable */
+  text-transform: uppercase;
+  background-color: gold;
+}
+
+/* element selector is least specific then the class selector and the most specific is id selector */

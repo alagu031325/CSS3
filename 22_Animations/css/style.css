@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  display: grid;
+  place-content: center;
+}
+
+div:first-child {
+  background-color: dodgerblue;
+
+  /* moves towards left */
+  /* transform: translateX(-50%); */
+
+  /* rocket rotated towards bottom right instead of top right */
+  /* transform: rotateX(180deg); */
+
+  /* transform: scaleX(120%); */
+
+  /* degree of leaning */
+  /* transform: skewX(-20deg); */
+}
+div:nth-child(2) {
+  background-color: yellow;
+
+  /* moves up */
+  /* transform: translateY(-2rem); */
+
+  /* transform: rotateY(180deg); */
+
+  /* transform: scaleY(120%); */
+
+  /* transform: skewY(-10deg); */
+}
+div:last-child {
+  /* moves 100% of the width of the element towards right and up by 2rem */
+  /* transform: translate(100%, -2rem); */
+  background-color: limegreen;
+
+  /* rotates the full card/box not just the emoji */
+  /* transform: rotateZ(90deg); */
+
+  /* shrinks 50% of the width in both X and Y axis */
+  /* transform: scale(50%,50%); */
+
+  /* transform: skew(-10deg,-10deg); */
+}
+
+div:hover{
+  background-color: midnightblue;
+  transition-property: background-color, transform;
+  /* takes 2s to change to midnightblue color and 3s to transform*/
+  transition-duration: 2s, 3s;
+  /* waits for half second before transitioning the background, we can specify different delay for transform if we want to */
+  transition-delay: 0.5s;
+  /* default is ease (starts slow speeds up and ends slow but linear transition does everything at an even speed*/
+  transition-timing-function: ease-in-out;
+
+  /* shorthand property to apply transition to all followed by duration , transition-timing-function and delay */
+  /* transition: all 2s ease 0.5s; */
+
+}
+
+div:last-child:hover{
+  transform: rotate(180deg);
+}
+
+.animate{
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  /* repeats 2 times and stops*/
+  animation-iteration-count: 2;
+  /* normal is default value, alternate means it will go forward the first time and next time it will reverse the animation */
+  animation-direction: normal;
+  /* default is backwards - it goes back to the original state if we have forwards it keeps the ending state */
+  animation-fill-mode: forwards;
+  /* all these properties can be applied using the shorthand notation */
+  /* animation : 3s ease-in-out 1s 2 normal forwards slide; */
+}
+
+/* It happens on reload and doesnt wait for hover or mouse event */
+@keyframes slide {
+  0%{
+    transform: translateX(0);
+  }
+  33%{
+    /* we apply 2 transforms separated by space */
+    transform: translateX(300px) rotate(180deg);
+  }
+  66%{
+    transform: translateX(-300px) rotate(-180deg);
+  }
+  100%{
+    transform: translateX(0);
+    background-color: blueviolet;
+  }
+}

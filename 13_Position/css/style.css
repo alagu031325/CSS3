@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  /* we have long page that we can scroll down to */
+  min-height: 200vh;
+}
+
+.outer-container {
+  border: 3px dashed #000;
+  width: 75vw;
+  height: 85vh;
+  margin: 40px auto;
+  /* ancestor element that is positioned relative */
+  position: relative;
+}
+
+.inner-container {
+  border: 2px solid #00f;
+  width: 40vw;
+  height: 50vh;
+  margin: 200px auto;
+  /* more than 1 ancestor with relative positioning - then it picks the ancestor that is closest to it*/
+  /* position: relative; */
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  padding: 1rem;
+}
+
+.absolute {
+  background-color: #00f;
+  /* static is the default value for position */
+  position: absolute;
+  /* if we set position as absolute we need to set either top, left, bottom or right */
+  /* absolute positioning needs a relative parent if it doesnt have an ancestor element that is positioned relative then it is positioned relative to the entire browser window*/
+  /* we can have any values */
+  top: 0;
+  /* move it to a random number so that it goes off the page - left: -1000px; */
+  left: 0;
+  z-index: 1;
+}
+
+.relative {
+  background-color: red;
+  /* relative to its parent container */
+  position: relative;
+  top: 300px;
+  left: 40px;
+}
+
+/* fixed element overlaps the absolute element because it comes after that element in the html but we can change using css z-index - higher value puts the absolute element to the front */
+.fixed {
+  background-color: green;
+  position: fixed;
+  /* stays 100px from the top of the browser - even if we scroll that element is at the fixed position - out of the flow of the page */
+  top: 100px;
+}
+
+/* It stays in the normal flow until the spot that you have defined */
+.sticky {
+  background-color: #000;
+  position: sticky;
+  /* sticks at the top when scrolled down and moves when its container moves away from the current page */
+  top: 0;
+}
+
+/* display none - completely removes from the page and opacity makes it invisible so not good for accessibility - position absolute keeps the element part of document but places completely off the page - can still be read by the screen reader*/
+
+/* ---------------------------------------------------------------- */
+/* single page application */
+
+/* should go in the root element not in the body element */
+html {
+  /* changes from instantaneous scroll to smooth scroll */
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+}
+
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+
+header,
+footer {
+  color: white;
+  text-align: center;
+  height: 60px;
+  font-size: 3rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  background-color: #000;
+  /* block level element - pulled out of the normal flow of the page so no more block element and doesnt span across the full width so set the width also change this to sticky with bottom 0 to always stay at the bottom of the page*/
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+a:visited {
+  color: #fff;
+}
+
+.social {
+  background-color: royalblue;
+  color: #fff;
+  /* doesnt inherit the font size like paragraph element since it is a button */
+  font-size: inherit;
+  padding: 1rem;
+  position: fixed;
+  top: 30%;
+  left: 10%;
+  z-index: 1;
+}

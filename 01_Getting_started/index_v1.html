@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3</title>
+    <!-- But the order in which the stylesheets are read makes the difference - latest color rule overrides the existing one -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      p {
+        /* Internal style sheet doesnt take precedence over the external style sheet */
+        color: limegreen;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline CSS not recommended to follow separation of concerns - this takes precedence over both internal and external style sheets - applied directly to the element itself -->
+    <p style="color: blueviolet">I'm learning CSS!</p>
+  </body>
+</html>
